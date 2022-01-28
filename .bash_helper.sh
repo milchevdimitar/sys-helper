@@ -97,6 +97,8 @@ function print_main_menu () {
         echo
     printf "${option_color}15 )${main_color} - Start playing Counter Strike: Global Offensive"
         echo
+    printf "${option_color}16 )${main_color} - SYSINOP"
+        echo
     printf "${option_color}ECFO )${main_color} - Edit conf file for options of the $helper_name"
         echo
     printf "${option_color}ECFC )${main_color} - Edit conf file for colors of the $helper_name"
@@ -326,6 +328,11 @@ while [ $loop -le 1 ]
 
             15)
                 cs
+                is_done
+            ;;
+
+            16)
+                ./sysinop
                 is_done
             ;;
 
