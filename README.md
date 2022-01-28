@@ -16,6 +16,8 @@ Special thanks to https://github.com/sathisharthar for creating sysinop
 
 Last commitment date: 28.01.2022
 
+Last version: alpha 1.0
+
 Demo pic:
 
 ![](https://github.com/milchevdimitar/sys-helper/blob/main/.bash_helper_demo_picture.png/?raw=true)
