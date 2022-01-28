@@ -11,6 +11,8 @@ Make sure to do your .conf files correctly:
 
 Tested on Arch Linux - Rolling
 
+Special thanks to https://github.com/sathisharthar for creating sysinop
+
 Last commitment date: 28.01.2022
 
 Demo pic:
