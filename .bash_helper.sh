@@ -1,21 +1,25 @@
+#conf files
 source /home/$(whoami)/.bash_helper.conf
+source /home/$(whoami)/.bash_helper_colors.conf
+
+loop=0
 
 function print_current_dir_info () {
     
-    printf "Current dir: $(pwd)"
+    printf "${main_color}Current dir: $(pwd)"
         echo
-    printf "It contains:"
+    printf "${main_color}It contains:"
         echo
-    printf "Permissions   Owner    Group  Created        Name"
+    printf "${main_color}Permissions   Owner    Group  Created        Name"
         echo
-    printf "$(ls -lah $(pwd))"
+    printf "${main_color}$(ls -lah $(pwd))"
         echo
 
 }
 
 function print_only_dir () {
 
-    printf "List of folders:"
+    printf "${main_color}List of folders:"
         echo
     printf $(ls -d */)
         echo
@@ -25,7 +29,7 @@ function print_only_dir () {
 function change_dir () {
 
     print_only_dir
-    printf "Change dir to:"
+    printf "${main_color}Change dir to:"
     read dir_op
     cd $dir_op
 
@@ -39,11 +43,11 @@ function get_out_of_dir () {
 
 function console () {
 
-    printf "Root commands:"
+    printf "${main_color}Root commands:"
         echo
     read the_command
     sudo $the_command
-    printf "The command $the_command was executed by $(whoami)(you) !!!"
+    printf "${main_color}The command $the_command was executed by $(whoami)(you) !!!"
         echo
 
 }
@@ -51,49 +55,53 @@ function console () {
 function print_main_menu () {
     
         echo
-    printf "Current time/date: $(date)"
+    printf "${debian_color}Current time/date: $(date)"
         echo
         echo
-    printf "_____ $helper_name ____________________________________"
+    printf "${option_color}____ $helper_name _________________________________________________________________"
         echo
-    printf " № ) - OPTION"
+    printf "${option_color}№ )${main_color} - OPTION"
         echo
         echo
-    printf " 1 ) - print current folder info"
+    printf "${option_color}1 )${main_color} - print current folder info"
         echo
-    printf " 2 ) - change current file manager's dir"
+    printf "${option_color}2 )${main_color} - change current file manager's dir"
         echo
-    printf " 3 ) - get out of current file manager's dir"
+    printf "${option_color}3 )${main_color} - get out of current file manager's dir"
         echo
-    printf " 4 ) - ROOT console"
+    printf "${option_color}4 )${main_color} - ROOT console"
         echo
-    printf " 5 ) - Edit Fstab"
+    printf "${option_color}5 )${main_color} - Edit Fstab"
         echo
-    printf " 6 ) - Edit alias"
+    printf "${option_color}6 )${main_color} - Edit alias"
         echo
-    printf " 7 ) - Edit bashrc"
+    printf "${option_color}7 )${main_color} - Edit bashrc"
         echo
-    printf " 8 ) - Print calendar"
+    printf "${option_color}8 )${main_color} - Print calendar"
         echo    
-    printf " 9 ) - Get weather"
+    printf "${option_color}9 )${main_color} - Get weather"
         echo
-    printf " 10 ) - Actualization ( WORKS ONLY ON ARCH BASED DISTROS )"
+    printf "${option_color}10 )${main_color} - Actualization ${warning_color}( WORKS ONLY ON ${arch_color}ARCH\e[0m ${warning_color}BASED DISTROS )"
         echo
-    printf " 10.1 ) - Actualization ( WORKS ONLY ON DEBIAN BASED DISTROS )"
+    printf "${option_color}10.1 )${main_color} - Actualization ${warning_color}( WORKS ONLY ON ${debian_color}DEBIAN\e[0m ${warning_color}BASED DISTROS )"
         echo
-    printf " 11 ) - Compile single C file ( using GCC compiler )"
+    printf "${option_color}11 )${main_color} - Compile single C file ( using GCC compiler )"
         echo
-    printf " 11.1 ) - Compile multiple C files ( using GCC compiler )"
+    printf "${option_color}11.1 )${main_color} - Compile multiple C files ( using GCC compiler )"
         echo
-    printf " 12 ) - Python shell"
+    printf "${option_color}12 )${main_color} - ${warning_color}Python\e[0m ${main_color}shell"
         echo
-    printf " 13 ) - Virsh shell"
+    printf "${option_color}13 )${main_color} - Virsh shell"
         echo
-    printf " 14 ) - New window of editor ($EDITOR)"
+    printf "${option_color}14 )${main_color} - New window of editor ($EDITOR)"
         echo
-    printf " ECF) - Edit conf file of the $helper_name"
+    printf "${option_color}15 )${main_color} - Start playing Counter Strike: Global Offensive"
+        echo
+    printf "${option_color}ECFO )${main_color} - Edit conf file for options of the $helper_name"
+        echo
+    printf "${option_color}ECFC )${main_color} - Edit conf file for colors of the $helper_name"
         echo        
-    printf " Any ) - Exit"
+    printf "${exit_color}Any ) - Countinue to bash terminal"
         echo
         echo
 
@@ -147,16 +155,16 @@ function full_system_update_upgrade_deb () {
 
 function is_done () {
 
-    printf "Status: Done"
+    printf "${main_color}Status: Done"
         echo
 
 }
 
 function compile_c () {
 
-    printf "What should i compile: "
+    printf "${main_color}What should i compile: "
     read $c_file_name
-    printf "Bin file name:"
+    printf "${main_color}Bin file name:"
     read bin_file_name
     gcc $c_file_name -o $bin_file_name 
 
@@ -164,116 +172,177 @@ function compile_c () {
 
 function compile_c_multiple () {
 
-    printf "What should i compile: "
+    printf "${main_color}What should i compile: "
     read $c_file_name
-    printf "Libs names:"
+    printf "${main_color}Libs names:"
     read $libs_c
-    printf "Bin file name:"
+    printf "${main_color}Bin file name:"
     read bin_file_name
     gcc $c_file_name $libs_c -o $bin_file_name 
 
 }
 
-loop=0
+function cs_menu () {
+
+    printf "${main_color} 1 ) - Start Counter Strike: Global Offensive"
+        echo
+    printf "${main_color} 2 ) - Start Counter Strike: Global Offensive with hacks"
+        echo
+    printf "${exit_color} Any ) - Exit function"
+        echo
+    
+}
+
+function cs_commands () {
+
+    cs="steam steam://rungameid/730"
+    cs_hacked="./home/$(whoami)/Fuzion/load"
+
+}
+
+function cs () {
+
+    while [ $loop -le 1 ]
+
+        do    
+
+            cs_menu
+            cs_commands
+
+            printf "${main_color}Option:"
+            read op_sec
+
+            case $op_sec in 
+
+                1)
+                    $cs
+                    is_done
+                ;;
+
+                2)
+                    $cs_hacked & 
+                    is_done
+                ;;
+                
+                *)
+                    break
+                ;;
+
+            esac
+
+        done
+
+}
 
 while [ $loop -le 1 ]
 
     do
 
         print_main_menu
-        printf "Option:"
+        printf "${main_color}Option:"
         read op_sec
 
         case $op_sec in
 
-        1)
-            print_current_dir_info
-            is_done
-        ;;
-        
-        2)
-            change_dir
-            is_done
-        ;;
+            1)
+                print_current_dir_info
+                is_done
+            ;;
+            
+            2)
+                change_dir
+                is_done
+            ;;
 
-        3)
-            get_out_of_dir
-            is_done
-        ;;
+            3)
+                get_out_of_dir
+                is_done
+            ;;
 
-        4)
-            console
-            is_done
-        ;;
+            4)
+                console
+                is_done
+            ;;
 
-        5)
-            edit_fstab
-            is_done
-        ;;
+            5)
+                edit_fstab
+                is_done
+            ;;
 
-        6)
-            edit_alias
-            is_done
-        ;;
+            6)
+                edit_alias
+                is_done
+            ;;
 
-        7)
-            edit_bashrc
-            is_done
-        ;;
+            7)
+                edit_bashrc
+                is_done
+            ;;
 
-        8)
-            calendar
-            is_done
-        ;;
+            8)
+                calendar
+                is_done
+            ;;
 
-        9)
-            weather
-            is_done
-        ;;
+            9)
+                weather
+                is_done
+            ;;
 
-        10)
-            full_system_update_upgrade_arch
-            is_done
-        ;;
+            10)
+                full_system_update_upgrade_arch
+                is_done
+            ;;
 
-        10.1)
-            full_system_update_upgrade_deb
-            is_done
-        ;;
+            10.1)
+                full_system_update_upgrade_deb
+                is_done
+            ;;
 
-        11)
-            compile_c
-            is_done
-        ;;
+            11)
+                compile_c
+                is_done
+            ;;
 
-        11.1)
-            compile_c_multiple
-            is_done
-        ;;
+            11.1)
+                compile_c_multiple
+                is_done
+            ;;
 
-        12)
-            python
-            is_done
-        ;;
+            12)
+                python
+                is_done
+            ;;
 
-        13)
-            virsh
-            is_done
-        ;;
+            13)
+                virsh
+                is_done
+            ;;
 
-        14)
-            $EDITOR
-            is_done
-        ;;
+            14)
+                $EDITOR
+                is_done
+            ;;
 
-        ECF)
-            $EDITOR /home/$(whoami)/.bash_helper.conf
-        ;;
+            15)
+                cs
+                is_done
+            ;;
 
-        *)
-            exit
-        ;;
-    
-    esac
+            ECFO)
+                $EDITOR /home/$(whoami)/.bash_helper.conf
+            ;;
+
+            ECFC)
+                $EDITOR /home/$(whoami)/.bash_helper_colors.conf        
+            ;;
+
+            *)
+                exit
+            ;;
+
+        esac
 
     done
+
+exit
