@@ -10,3 +10,5 @@ Make sure to do your .conf files correctly:
  3) - Change your system preferences like package manager, AUR helper and etc.
 
 Tested on Arch Rolling
+
+![Demo pic:](https://github.com/milchevdimitar/sys-helper/blob/main/.bash_helper_demo_pic.png/?raw=true)
