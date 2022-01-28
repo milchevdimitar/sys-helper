@@ -17,3 +17,4 @@ Last commitment date: 28.01.2022
 
 Demo pic:
 
+![](https://github.com/milchevdimitar/sys-helper/blob/main/.bash_helper_demo_pic.png/?raw=true)
