@@ -10,6 +10,7 @@ Make sure to do your .conf files correctly:
  3) - Change your system preferences like package manager, AUR helper and etc.
 
 Tested on Arch Linux - Rolling
+
 Last commitment date: 28.01.2022
 
 Demo pic:
