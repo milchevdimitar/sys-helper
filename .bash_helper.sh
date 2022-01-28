@@ -1,3 +1,4 @@
+#!/bin/bash
 #conf files
 source /home/$(whoami)/.bash_helper.conf
 source /home/$(whoami)/.bash_helper_colors.conf
