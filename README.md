@@ -9,7 +9,7 @@ Make sure to do your .conf files correctly:
  2) - Default color conf file is actually good
  3) - Change your system preferences like package manager, AUR helper and etc.
 
-Tested on Arch Rolling
+Tested on Arch Linux - Rolling
 
 Demo pic:
 
