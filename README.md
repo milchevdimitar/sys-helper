@@ -13,6 +13,7 @@ Tested on Arch Linux - Rolling
 Tested on Debian - Rolling
 
 Special thanks to https://github.com/sathisharthar for creating sysinop
+
 Special thanks to https://github.com/MatMoul for creating Arch installing scypts
 
 Last commitment date: 31.01.2022
