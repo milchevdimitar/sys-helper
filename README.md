@@ -5,7 +5,7 @@ Written for one night by student
 
 Make sure to do your .conf files correctly:
 
- 1) - Put them in your '/home/$(whoami)' without renaming them
+ 1) - Put them in your '/home/$(whoami)/.bash_helper' without renaming them
  2) - Default color conf file is actually good
  3) - Change your system preferences like package manager, AUR helper and etc.
 
@@ -13,10 +13,11 @@ Tested on Arch Linux - Rolling
 Tested on Debian - Rolling
 
 Special thanks to https://github.com/sathisharthar for creating sysinop
+Special thanks to https://github.com/MatMoul for creating Arch installing scypts
 
-Last commitment date: 28.01.2022
+Last commitment date: 31.01.2022
 
-Last version: alpha 1.0
+Last version: beta 1.0
 
 Demo pic:
 
