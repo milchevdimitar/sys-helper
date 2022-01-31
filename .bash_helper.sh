@@ -1,26 +1,6 @@
-#Copyright (c) 2022 Dimitar Milchev
-
-#Permission is hereby granted, free of charge, to any person obtaining a copy
-#of this software and associated documentation files (the "Software"), limitation 
-#the rights to use, and to permit persons to whom the Software is
-#furnished to do so, subject to the following conditions:
-
-#The above copyright notice and this permission notice shall be included in all
-#copies or substantial portions of the Software.
-
-#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#SOFTWARE.
-
-#!/bin/bash
-
 #conf files
-source /home/$(whoami)/.bash_helper.conf
-source /home/$(whoami)/.bash_helper_colors.conf
+source /home/$(whoami)/.bash_helper/.bash_helper.conf
+source /home/$(whoami)/.bash_helper/.bash_helper_colors.conf
 
 loop=0
 
@@ -78,7 +58,7 @@ function print_main_menu () {
     printf "${debian_color}Current time/date: $(date)"
         echo
         echo
-    printf "${option_color}____ $helper_name _________________________________________________________________"
+    printf "${lane_color}____${option_color}$helper_name${lane_color}_____________________________________________________"
         echo
     printf "${option_color}№ )${main_color} - OPTION"
         echo
@@ -122,6 +102,14 @@ function print_main_menu () {
     printf "${option_color}ECFO )${main_color} - Edit conf file for options of the $helper_name"
         echo
     printf "${option_color}ECFC )${main_color} - Edit conf file for colors of the $helper_name"
+        echo
+    printf "${option_color}ECFN )${main_color} - Edit conf file for neofetch"
+        echo
+    printf "${option_color}SYSINFO )${main_color} - Get system info"
+        echo        
+    printf "${option_color}CALC )${main_color} - Get in-terminal calculator"
+        echo
+    printf "${option_color}ARCH_INSTALL )${main_color} - Install${arch_color} ARCH\e[0m${main_color} somewhere on your current PC"
         echo        
     printf "${exit_color}Any ) - Countinue to bash terminal"
         echo
@@ -256,6 +244,11 @@ function cs () {
 
 }
 
+function arch_install () {
+
+    ./.bash_helper/.bash_helper_arch_install.sh
+}
+
 while [ $loop -le 1 ]
 
     do
@@ -358,10 +351,32 @@ while [ $loop -le 1 ]
 
             ECFO)
                 $EDITOR /home/$(whoami)/.bash_helper.conf
+                is_done
             ;;
 
             ECFC)
                 $EDITOR /home/$(whoami)/.bash_helper_colors.conf        
+                is_done
+            ;;
+
+            ECFN)
+                $EDITOR /home/$(whoami)/neofetch        
+            
+            ;;
+
+            SYSINFO)
+                cat neofetch
+                is_done
+            ;;
+
+            CALC)
+                bc
+                is_done
+            ;;
+
+            ARCH_INSTALL)
+                arch_install
+                is_done
             ;;
 
             *)
