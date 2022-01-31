@@ -20,7 +20,7 @@ Last version: alpha 1.0
 
 Demo pic:
 
-![](https://github.com/milchevdimitar/sys-helper/blob/main/.bash_helper_demo_picture.png/?raw=true)
+![](https://github.com/milchevdimitar/sys-helper/blob/main/.bash_helper_demo_pic.png/?raw=true)
 
 LICENCE:
 Copyright (c) 2022 Dimitar Milchev
